@@ -78,22 +78,22 @@ public class NutritionFacts {
             this.servings = servings;
         }
         
-        public NutritionFactsBuilder Calories(int calories){
+        public NutritionFactsBuilder calories(int calories){
             this.calories = calories;
             return this;
         }
         
-        public NutritionFactsBuilder Fat(int fat){
+        public NutritionFactsBuilder fat(int fat){
             this.fat = fat;
             return this;
         }
         
-        public NutritionFactsBuilder Sodium(int sodium){
+        public NutritionFactsBuilder sodium(int sodium){
             this.sodium = sodium;
             return this;
         }
         
-        public NutritionFactsBuilder Carbohydrate(int carbohydrate){
+        public NutritionFactsBuilder carbohydrate(int carbohydrate){
             this.carbohydrate = carbohydrate;
             return this;
         }
