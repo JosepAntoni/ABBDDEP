@@ -7,7 +7,7 @@ import java.util.*;
  *
  * @author jcc30
  */
-public class Register extends Observable{
+public class Register{
     private Store store;
     private Sale currentSale;
     
@@ -17,17 +17,5 @@ public class Register extends Observable{
     
     public void createNewSale(){
         this.currentSale = new Sale();
-    }
-    
-    public Store getStore(){
-        return this.store;
-    }
-    
-    public Sale getCurrentSale(){
-        return this.currentSale;
-    }
-    
-    public void setSale(Sale sale){
-        this.currentSale = sale;
     }
 }

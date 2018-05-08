@@ -7,9 +7,13 @@ import java.util.*;
  *
  * @author jcc30
  */
-class ProductDescription extends Observable{
+public class ProductDescription extends SLI{
     private String description;
     private int price;
+
+    public ProductDescription(ProductDescription desc, int quantity) {
+        super(desc, quantity);
+    }
     
     public String getDescription(){
         return this.description;
@@ -17,8 +21,6 @@ class ProductDescription extends Observable{
     
     public void setDescription(String description){
         this.description = description;
-        setChanged();
-        notifyObservers(description);
     }
     
     public int getPrice(){
@@ -27,7 +29,5 @@ class ProductDescription extends Observable{
     
     public void setPrice(int price){
         this.price = price;
-        setChanged();
-        notifyObservers(price);
     }
 }

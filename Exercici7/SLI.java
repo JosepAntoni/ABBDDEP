@@ -7,7 +7,7 @@ package Exercici7;
  *
  * @author jcc30
  */
-public class SLI {
+public class SLI extends Sale{
     private ProductDescription desc;
     private int quantity;
     public SLI(ProductDescription desc, int quantity){
