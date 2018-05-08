@@ -8,13 +8,13 @@ package Exercici12;
  * @author jcc30
  */
 public class NutritionFacts {
-    private final int servingSize;
-    private final int servings;
-    private final int calories;
-    private final int fat;
-    private final int sodium;
-    private final int carbohydrate;
-    public NutritionFacts(NutritionFactsBuilder builder){
+    private final int servingSize; //required
+    private final int servings; //required
+    private final int calories; //optional
+    private final int fat; //optional
+    private final int sodium; //optional
+    private final int carbohydrate; //optional
+    private NutritionFacts(Builder builder){
         this.servingSize = builder.servingSize;
         this.servings = builder.servings;
         this.calories = builder.calories;
@@ -65,7 +65,7 @@ public class NutritionFacts {
         return this.carbohydrate;
     }
     
-    public static class NutritionFactsBuilder{
+    public static class Builder{
         private final int servingSize;
         private final int servings;
         private int calories;
@@ -73,27 +73,27 @@ public class NutritionFacts {
         private int sodium;
         private int carbohydrate;
         
-        public NutritionFactsBuilder(int servingSize, int servings){
+        public Builder(int servingSize, int servings){
             this.servingSize = servingSize;
             this.servings = servings;
         }
         
-        public NutritionFactsBuilder calories(int calories){
+        public Builder calories(int calories){
             this.calories = calories;
             return this;
         }
         
-        public NutritionFactsBuilder fat(int fat){
+        public Builder fat(int fat){
             this.fat = fat;
             return this;
         }
         
-        public NutritionFactsBuilder sodium(int sodium){
+        public Builder sodium(int sodium){
             this.sodium = sodium;
             return this;
         }
         
-        public NutritionFactsBuilder carbohydrate(int carbohydrate){
+        public Builder carbohydrate(int carbohydrate){
             this.carbohydrate = carbohydrate;
             return this;
         }
