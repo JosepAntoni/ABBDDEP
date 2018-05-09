@@ -14,16 +14,22 @@ public class Machine extends MachineComponent{
         return broken;
     }
     
+    @Override
     public void setBroken(){ 
-        broken = true;
-        setChanged();
-        notifyObservers(broken);
+        if(!broken){
+            broken = true;
+            setChanged();
+            notifyObservers(broken);
+        }
     }
     
-    public void repair(){ 
-        broken = false;
-        setChanged();
-        notifyObservers(broken);
+    @Override
+    public void repair(){
+        if(broken){
+            broken = false;
+            setChanged();
+            notifyObservers(broken);
+        }
     }
     
 }
