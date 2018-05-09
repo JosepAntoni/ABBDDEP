@@ -16,7 +16,7 @@ public class Machine extends MachineComponent{
     
     @Override
     public void setBroken(){ 
-        if(!broken){
+        if(!isBroken()){
             broken = true;
             setChanged();
             notifyObservers(broken);
@@ -25,7 +25,7 @@ public class Machine extends MachineComponent{
     
     @Override
     public void repair(){
-        if(broken){
+        if(isBroken()){
             broken = false;
             setChanged();
             notifyObservers(broken);
