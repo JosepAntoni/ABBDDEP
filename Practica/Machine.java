@@ -14,4 +14,16 @@ public class Machine extends MachineComponent{
         return broken;
     }
     
+    public void setBroken(){ 
+        broken = true;
+        setChanged();
+        notifyObservers(broken);
+    }
+    
+    public void repair(){ 
+        broken = false;
+        setChanged();
+        notifyObservers(broken);
+    }
+    
 }
