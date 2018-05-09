@@ -12,20 +12,52 @@ import java.util.*;
  * @author jcc30
  */
 public class MachineComposite extends MachineComponent{
+    private final List<MachineComponent> components = new ArrayList<>();
+    private final List<MachineComponent> brokenComponents = new ArrayList<>();
 
-    private List<MachineComponent> components = new ArrayList<>();
-    
-    public void addComponent(MachineComponent mc){
-        components.add(mc);
+    public void addComponent(MachineComponent component){
+        components.add(component);
+        if (component.isBroken()) { setBroken(); }
+    }
+
+    @Override
+    public boolean isBroken() {
+        updateBrokenComponents();
+        return broken;
     }
     
     @Override
-    public boolean isBroken() {
-        if (broken){ return true; }
-        for (MachineComponent mc : components) {
-            if (mc.isBroken()){ return true; }
+    public void setBroken() {
+        if (!isBroken()){
+            broken = true;
+            setChanged();
+            notifyObservers(broken);
         }
-        return false;
+    }
+
+    @Override
+    public void repair() {
+        if (isBroken()) {
+            for (MachineComponent mc : brokenComponents) {
+                mc.repair();
+            }
+            broken = false;
+            repairBrokenComponents();
+            setChanged();
+            notifyObservers(broken);
+        }
+    }
+
+    private void repairBrokenComponents(){
+        brokenComponents.removeAll(components);
     }
     
+    private void updateBrokenComponents() {
+        for (MachineComponent mc : components) {
+            if (mc.isBroken() && !brokenComponents.contains(mc)){
+                brokenComponents.add(mc);
+                setBroken();
+            }
+        }
+    }
 }

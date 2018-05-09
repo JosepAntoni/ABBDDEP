@@ -9,11 +9,20 @@ package Practica;
  */
 public class Machine extends MachineComponent{
 
+    /**
+     * Indicates if the machine is broken
+     * @return boolean broken
+     */
     @Override
     public boolean isBroken() {
         return broken;
     }
     
+    /**
+     * Checks if broken is false, and if it is, sets it's value to true 
+     * and notify the observer
+     * 
+     */
     @Override
     public void setBroken(){ 
         if(!isBroken()){
