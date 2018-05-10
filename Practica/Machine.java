@@ -10,7 +10,7 @@ package Practica;
 public class Machine extends MachineComponent{
 
     /**
-     * Indicates if the machine is broken
+     * Returns a boolean which indicates if the machine is broken
      * @return boolean broken
      */
     @Override
@@ -19,9 +19,8 @@ public class Machine extends MachineComponent{
     }
     
     /**
-     * Checks if broken is false, and if it is, sets it's value to true 
-     * and notify the observer
-     * 
+     * Checks if boolean broken is false, and if it is, sets it's value to true 
+     * and notifies the observer.  
      */
     @Override
     public void setBroken(){ 
@@ -32,6 +31,10 @@ public class Machine extends MachineComponent{
         }
     }
     
+    /**
+     * Checks if boolean broken is true, and if it is, sets it's value to false 
+     * and notifies the observer.  
+     */
     @Override
     public void repair(){
         if(isBroken()){
