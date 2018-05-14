@@ -7,7 +7,7 @@ import java.util.*;
  *
  * @author jcc30
  */
-public class Drawing extends Figure{
+public class Drawing extends Figure implements ItemElement{
     
     private final List<Figure> list;
     
@@ -38,5 +38,10 @@ public class Drawing extends Figure{
      */
     public List<Figure> getList() {
         return list;
+    }
+    
+    @Override
+    public void accept(Scaler scaler) {
+        scaler.visit(this);
     }
 }

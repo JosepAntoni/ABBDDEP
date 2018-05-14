@@ -8,7 +8,7 @@ package Exercici19;
  *
  * @author jcc30
  */
-public class Rectangle extends Figure {
+public class Rectangle extends Figure implements ItemElement{
     
     private float width;
     private float height;
@@ -56,5 +56,10 @@ public class Rectangle extends Figure {
      */
     public void setHeight(float height) {
         this.height = height;
+    }
+    
+    @Override
+    public void accept(Scaler scaler) {
+        scaler.visit(this);
     }
 }

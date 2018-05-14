@@ -8,7 +8,7 @@ package Exercici19;
  *
  * @author jcc30
  */
-public class Line extends Figure{
+public class Line extends Figure implements ItemElement{
     
     private float x2;
     private float y2;
@@ -56,5 +56,10 @@ public class Line extends Figure{
      */
     public void setY2(float y2) {
         this.y2 = y2;
+    }
+    
+    @Override
+    public void accept(Scaler scaler) {
+        scaler.visit(this);
     }
 }
