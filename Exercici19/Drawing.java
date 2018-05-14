@@ -41,7 +41,7 @@ public class Drawing extends Figure implements ItemElement{
     }
     
     @Override
-    public void accept(Scaler scaler) {
+    public void accept(FigureVisitor scaler) {
         scaler.visit(this);
     }
 }

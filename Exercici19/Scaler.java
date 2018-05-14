@@ -9,7 +9,7 @@ package Exercici19;
  */
 public class Scaler implements FigureVisitor{
 
-    private final int scaler;
+    private final float scaler;
     
     public Scaler(int scaler){
         this.scaler = scaler;
@@ -48,7 +48,7 @@ public class Scaler implements FigureVisitor{
     /**
      * @return the scaler
      */
-    public int getScaler() {
+    public float getScaler() {
         return scaler;
     }
     

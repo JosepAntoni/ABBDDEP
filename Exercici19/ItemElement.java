@@ -9,5 +9,5 @@ package Exercici19;
  */
 public interface ItemElement {
     
-    public void accept(Scaler scaler);
+    public void accept(FigureVisitor scaler);
 }
