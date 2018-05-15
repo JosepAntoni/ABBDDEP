@@ -8,7 +8,7 @@ package Exercici19;
  *
  * @author jcc30
  */
-public class Rectangle extends Figure implements ItemElement{
+public class Rectangle extends Figure{
     
     private float width;
     private float height;
@@ -57,9 +57,13 @@ public class Rectangle extends Figure implements ItemElement{
     public void setHeight(float height) {
         this.height = height;
     }
-    
+
     @Override
-    public void accept(FigureVisitor scaler) {
-        scaler.visit(this);
+    public void accept(FigureVisitor visitor) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+
+    
+    
 }

@@ -9,7 +9,7 @@ package Exercici19;
  */
 public interface FigureVisitor {
     public void visit(Circle c);
-    public void visit(Rectangle r);
+    public void visit(ColorRectangle r);
     public void visit(Line l);
     public void visit(Drawing d);
 }

@@ -8,7 +8,7 @@ package Exercici19;
  *
  * @author jcc30
  */
-public abstract class Figure {
+public abstract class Figure implements ItemElement{
     
     private final float x;
     private final float y;
@@ -38,4 +38,5 @@ public abstract class Figure {
     public float getY() {
         return y;
     }
+    
 }

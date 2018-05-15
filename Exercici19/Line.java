@@ -59,7 +59,7 @@ public class Line extends Figure implements ItemElement{
     }
     
     @Override
-    public void accept(FigureVisitor scaler) {
-        scaler.visit(this);
+    public void accept(FigureVisitor visitor) {
+        visitor.visit(this);
     }
 }

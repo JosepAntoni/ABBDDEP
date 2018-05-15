@@ -7,7 +7,7 @@ import java.awt.Color;
  *
  * @author jcc30
  */
-public class ColorRectangle extends Rectangle{
+public class ColorRectangle extends Rectangle implements ItemElement{
     
     private final Color color;
 
@@ -24,5 +24,10 @@ public class ColorRectangle extends Rectangle{
     @Override
     public ColorRectangle copy(){
         return new ColorRectangle(this);
+    }
+    
+    @Override
+    public void accept(FigureVisitor visitor) {
+        visitor.visit(this);
     }
 }

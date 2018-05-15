@@ -11,7 +11,7 @@ public class Scaler implements FigureVisitor{
 
     private final float scaler;
     
-    public Scaler(int scaler){
+    public Scaler(float scaler){
         this.scaler = scaler;
     }
     
@@ -21,8 +21,8 @@ public class Scaler implements FigureVisitor{
     }
 
     @Override
-    public void visit(Rectangle r) {
-        r.setHeight(getScaler() * r.getWidth());
+    public void visit(ColorRectangle r) {
+        r.setHeight(getScaler() * r.getHeight());
         r.setWidth(getScaler() * r.getWidth());
     }
 
@@ -35,13 +35,7 @@ public class Scaler implements FigureVisitor{
     @Override
     public void visit(Drawing d) {
         for (Figure f : d.getList()){
-            if (f instanceof Circle){
-                visit((Circle)f);
-            }else if (f instanceof Rectangle){
-                visit((Rectangle)f);
-            }else if (f instanceof Line){
-                visit((Line)f);
-           }
+            f.accept(this);
         }
     }
 
