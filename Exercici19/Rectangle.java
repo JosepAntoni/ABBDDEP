@@ -60,7 +60,7 @@ public class Rectangle extends Figure{
 
     @Override
     public void accept(FigureVisitor visitor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        visitor.visit((ColorRectangle)this);
     }
 
 
