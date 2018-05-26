@@ -1,12 +1,5 @@
-/*
- * This project has been developed by Josep Antoni Costa Camps
- */
-package Exercici6;
+package ex6;
 
-/**
- *
- * @author jcc30
- */
 public class Rectangle extends Figure {
     
     private final float width;
@@ -23,9 +16,15 @@ public class Rectangle extends Figure {
         this.width = r.width;
         this.height = r.height;
     }
-    
+
     @Override
-    public Rectangle copy(){
+    public Figure copy() {
+        return this;
+    }
+
+    @Override
+    public Figure deepCopy() {
         return new Rectangle(this);
     }
+    
 }
