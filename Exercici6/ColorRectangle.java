@@ -1,28 +1,29 @@
-/*
- * This project has been developed by Josep Antoni Costa Camps
- */
-package Exercici6;
-import java.awt.Color;
-/**
- *
- * @author jcc30
- */
-public class ColorRectangle extends Rectangle{
-    
-    private final Color color;
+package ex6;
 
-    public ColorRectangle(float x, float y, float width, float height, Color color) {
+import java.awt.Color;
+
+public class ColorRectangle extends Rectangle {
+
+    private final Color c;
+    
+    public ColorRectangle(float x, float y, float width, float height, Color c){
         super(x, y, width, height);
-        this.color = color;
+        this.c = c;
     }
     
     public ColorRectangle(ColorRectangle cr){
         super(cr);
-        this.color = cr.color;
+        this.c = cr.c;
     }
     
     @Override
-    public ColorRectangle copy(){
+    public ColorRectangle copy() {
+        return this;
+    }
+    
+    @Override 
+    public ColorRectangle deepCopy() {
         return new ColorRectangle(this);
     }
+    
 }
