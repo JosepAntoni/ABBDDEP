@@ -1,14 +1,7 @@
-/*
- * This project has been developed by Josep Antoni Costa Camps
- */
-package Exercici6;
+package ex6;
 
-/**
- *
- * @author jcc30
- */
 public abstract class Figure {
-    
+
     private final float x;
     private final float y;
     
@@ -23,4 +16,6 @@ public abstract class Figure {
     }
     
     public abstract Figure copy();
+    public abstract Figure deepCopy();
+    
 }
