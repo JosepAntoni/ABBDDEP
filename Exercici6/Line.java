@@ -1,13 +1,6 @@
-/*
- * This project has been developed by Josep Antoni Costa Camps
- */
-package Exercici6;
+package ex6;
 
-/**
- *
- * @author jcc30
- */
-public class Line extends Figure{
+public class Line extends Figure {
     
     private final float x2;
     private final float y2;
@@ -18,14 +11,20 @@ public class Line extends Figure{
         this.y2 = y2;
     }
     
-    public Line(Line l){
+    public Line(Line l) {
         super(l);
         this.x2 = l.x2;
         this.y2 = l.y2;
     }
-    
+
     @Override
-    public Line copy(){
+    public Figure copy() {
+        return this;
+    }
+
+    @Override
+    public Figure deepCopy() {
         return new Line(this);
-    } 
+    }
+    
 }
