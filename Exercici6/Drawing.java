@@ -1,35 +1,27 @@
-/*
- * This project has been developed by Josep Antoni Costa Camps
- */
-package Exercici6;
-import java.util.*;
-/**
- *
- * @author jcc30
- */
-public class Drawing extends Figure{
+package ex6;
+
+public class Circle extends Figure {
+
+    private final float r;
     
-    private final List<Figure> list;
-    
-    public Drawing(float x, float y) {
+    public Circle(float x, float y, float r){
         super(x, y);
-        this.list = new ArrayList<>();
+        this.r = r;
+    }
+
+    public Circle(Circle c){
+        super(c);
+        this.r = c.r;
     }
     
-    public Drawing(Drawing d){
-        super(d);
-        this.list = new ArrayList<>();
-        for(Figure f : d.list){
-            this.list.add(f.copy());
-        }
-    }
-    
-    public void addFigure(Figure figure){
-        list.add(figure);
+    @Override
+    public Figure copy() {
+        return this;
     }
 
     @Override
-    public Drawing copy() {
-        return new Drawing(this);
-    }  
+    public Figure deepCopy() {
+        return new Circle(this);
+    }
+    
 }
